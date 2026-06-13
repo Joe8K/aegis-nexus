@@ -1,0 +1,22 @@
+org_name: YourOrganization
+domain: yourdomain.com
+
+assets:
+  - name: main-website
+    type: domain
+    tags: [production, public]
+    tech_stack: [nginx, cloudflare, react, nodejs]
+    meta:
+      criticality: high
+
+  - name: primary-api
+    type: api
+    tags: [production, internal]
+    tech_stack: [python, fastapi, postgresql]
+    meta:
+      criticality: critical
+
+relationships:
+  - from: main-website
+    to: primary-api
+    type: depends_on
